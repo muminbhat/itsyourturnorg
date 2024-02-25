@@ -66,9 +66,11 @@ const HomePage = () => {
                 We are here to design your special days and create unforgettable
                 memories
               </div>
+              <a href="https://wa.me/8080332299/" target="blank" className=" self-center">
               <div className="justify-center self-center px-10 py-3.5 mt-2.5 text-xl font-medium text-white whitespace-nowrap bg-purple-900 shadow-sm max-md:px-5">
                 Book Now
               </div>
+              </a>
             </div>
           </div>
         </div>
