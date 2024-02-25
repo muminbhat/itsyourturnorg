@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cinzel+Decorative:wght@400;700;900&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+h2,h3{
+    font-family:"Cinzel Decorative";
+}
+
+p {
+    font-family: "Jost";
+}
+
+h3 {
+    font-family: "allura";
+}

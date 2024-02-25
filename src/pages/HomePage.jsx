@@ -12,17 +12,87 @@ const HomePage = () => {
   return (
     <>
       <div className="">
-        <div className=""></div>
+        {/* Nav */}
+        <div>
+      <div className="flex max-md:flex-col max-md:gap-0 max-md:">
+        <div className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
+          <div className="flex flex-col grow items-center px-16 pt-12 pb-3 mx-auto w-full bg-white md:rounded-br-[4rem] shadow-[3px_0px_15px_rgba(0,0,0,0.25)] max-md:px-5">
+            <img
+              loading="lazy"
+              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&"
+              className="max-w-full aspect-[1.08] fill-purple-900 w-[115px]"
+            />
+            <div className="mt-9 text-3xl font-bold text-black whitespace-nowrap">
+              <h2>It’s Your Turn</h2>
+            </div>
+            <div className="mt-3 text-3xl text-purple-900 whitespace-nowrap">
+             <h3 className="italic text-4xl"> Social Event Specialists</h3>
+            </div>
+            <div className="mt-20 text-xl text-purple-900 max-md:mt-10">
+              Home
+            </div>
+            <div className="mt-7 text-xl text-purple-900"><p>Services</p></div>
+            <div className="mt-6 text-xl text-purple-900"><p>About</p></div>
+            <div className="mt-7 text-xl text-purple-900"><p>Blog</p></div>
+            <div className="mt-6 text-xl text-purple-900"><p>Contact</p></div>
+            <div className="mt-40 h-px bg-orange-400 w-[79px] max-md:mt-10" />
+            <div className="flex gap-1 items-start mt-2 text-xl font-medium text-center text-purple-900 whitespace-nowrap">
+             
+              <div className="flex flex-col flex-1 mt-2.5">
+                <div className="self-center"><p>+91 8080332299</p></div>
+                <div className="mt-1"><p>itsyourturn.in@gmail.com</p></div>
+              </div>
+             
+            </div>
+            <div className="flex gap-5 justify-between self-stretch pr-6 mt-2.5 max-md:pr-5">
+              
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col w-9/12 max-md:ml-0 max-md:w-full">
+          <div className="flex overflow-hidden relative flex-col justify-center items-start px-14 py-12 min-h-[734px] max-md:px-5 max-md:max-w-full">
+            <img
+              loading="lazy"
+              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&"
+              className="object-cover absolute inset-0 size-full"
+            />
+            <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[600px] max-md:px-5 max-md:mt-10">
+              <div className="text-3xl tracking-widest text-center text-purple-900 max-md:max-w-full">
+              <h3 className="italic text-4xl">  Extra-ordinary Event delivered here....</h3>
+                
+                <h3 className="italic text-4xl">Let us create magic for you!{" "}</h3>
+              </div>
+              <div className="mt-5 text-2xl tracking-wide text-center text-black max-md:max-w-full">
+                We are here to design your special days and create unforgettable
+                memories
+              </div>
+              <div className="justify-center self-center px-10 py-3.5 mt-2.5 text-xl font-medium text-white whitespace-nowrap bg-purple-900 shadow-sm max-md:px-5">
+                Book Now
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        {/* Nav */}
+        {/* Hero Start */}
+        {/* <div className="">
+          <img src={hero} className="w-full h-[100vh] md:h-[70vh] object-cover" alt="" />
+          <div></div>
+        </div> */}
+        {/* Hero End */}
+
+
         {/* Services */}
         <>
           {/* Card Blog */}
           <div className="max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-10 mx-auto">
             {/* Title */}
             <div className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
-              <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+              <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
                 Our Services
               </h2>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
+              <p className="mt-1 text-md md:text-xl text-gray-600 dark:text-gray-400">
                 Whether you're planning a corporate gathering, a wedding, or a
                 special celebration, our team of experts is here to turn your
                 vision into reality.
@@ -175,7 +245,7 @@ const HomePage = () => {
         <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8  mx-auto">
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">
-            <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+          <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
               Event Orchestration
             </h2>
             <p className="mt-1 text-gray-600 dark:text-gray-400">
@@ -234,7 +304,7 @@ const HomePage = () => {
             <br />
             <br />
             <br />
-            <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+            <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
               Luxury CORPORATE Gifting
             </h2>
             <p className="mt-1 text-gray-600 dark:text-gray-400">
@@ -257,7 +327,7 @@ const HomePage = () => {
         <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8  mx-auto">
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">
-            <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+          <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
               Gallary
             </h2>
             <div
@@ -269,47 +339,7 @@ const HomePage = () => {
         {/* Gallary End */}
 
         {/* Team Start */}
-        <div className="w-[calc(1279*var(--rpx))] h-[calc(494*var(--rpx))] relative overflow-hidden z-[139] mt-[calc(24*var(--rpx))] mr-0 mb-0 ml-[calc(122*var(--rpx))]">
-          <div className="w-[calc(572*var(--rpx))] h-[calc(83*var(--rpx))] relative overflow-hidden z-[150] mt-[calc(6*var(--rpx))] mr-0 mb-0 ml-[calc(428*var(--rpx))]">
-            <span className="flex w-[calc(571.63037109375*var(--rpx))] h-[calc(83*var(--rpx))] justify-center items-start font-['Cinzel_Decorative'] text-[calc(68*var(--rpx))] font-normal leading-[calc(82.55886840820312*var(--rpx))] text-[#000] absolute top-0 left-[calc(50%-calc(286*var(--rpx)))] text-center capitalize whitespace-nowrap z-[151]">
-              Meet the Team
-            </span>
-          </div>
-          <div className="w-[calc(724*var(--rpx))] h-[calc(349.9778137207031*var(--rpx))] relative overflow-hidden z-[140] mt-[calc(31*var(--rpx))] mr-0 mb-0 ml-[calc(352*var(--rpx))]">
-            <div className="w-[calc(723.977783203125*var(--rpx))] h-[calc(349.9778137207031*var(--rpx))] relative overflow-hidden z-[141] mt-0 mr-0 mb-0 ml-0">
-              <div className="w-[calc(349.9778137207031*var(--rpx))] h-[calc(349.9778137207031*var(--rpx))] border-solid border-[calc(0.8973788619041443*var(--rpx))] border-[#d9d9d9] absolute top-0 left-0 z-[142]">
-                <div
-                  className="w-[calc(170.50198364257812*var(--rpx))] h-[calc(170.50198364257812*var(--rpx))] bg-cover bg-no-repeat relative z-[147] mt-[calc(39.484619140625*var(--rpx))] mr-0 mb-0 ml-[calc(89.73779296875*var(--rpx))]"
-                  style={{
-                    backgroundImage:
-                      "url(https://res.cloudinary.com/dxlzb8s4y/image/upload/v1708873074/teamTwo_rpkffk.png)",
-                  }}
-                />{" "}
-                <span className="flex w-[calc(223*var(--rpx))] h-[calc(36*var(--rpx))] justify-center items-start font-['Cinzel_Decorative'] text-[calc(26.921367645263672*var(--rpx))] font-normal leading-[calc(35.89515686035156*var(--rpx))] text-[#000] relative text-center capitalize whitespace-nowrap z-[144] mt-[calc(33.20301240682602*var(--rpx))] mr-0 mb-0 ml-[calc(64.86669921875*var(--rpx))]">
-                  Muskaan Shah
-                </span>
-                <span className="flex w-[calc(123*var(--rpx))] h-[calc(62*var(--rpx))] justify-center items-start font-['Jost'] text-[calc(17.94757843017578*var(--rpx))] font-normal leading-[calc(30.510883331298828*var(--rpx))] text-[#313131] relative text-center z-[145] mt-[calc(0.6051425337791443*var(--rpx))] mr-0 mb-0 ml-[calc(114*var(--rpx))]">
-                  Event Specialist Founder
-                </span>
-              </div>
-              <div className="w-[calc(349.9778137207031*var(--rpx))] h-[calc(349.9778137207031*var(--rpx))] border-solid border-[calc(0.8973788619041443*var(--rpx))] border-[#d9d9d9] absolute top-0 left-[calc(374*var(--rpx))] z-[146]">
-                <div
-                  className="w-[calc(170.50198364257812*var(--rpx))] h-[calc(170.50198364257812*var(--rpx))] bg-cover bg-no-repeat relative z-[147] mt-[calc(39.484619140625*var(--rpx))] mr-0 mb-0 ml-[calc(89.73779296875*var(--rpx))]"
-                  style={{
-                    backgroundImage:
-                      "url(https://res.cloudinary.com/dxlzb8s4y/image/upload/v1708873074/teamTwo_rpkffk.png)",
-                  }}
-                />{" "}
-                <span className="flex w-[calc(176*var(--rpx))] h-[calc(36*var(--rpx))] justify-center items-start font-['Cinzel_Decorative'] text-[calc(26.921367645263672*var(--rpx))] font-normal leading-[calc(35.89515686035156*var(--rpx))] text-[#000] relative text-center capitalize whitespace-nowrap z-[148] mt-[calc(33.20301240682602*var(--rpx))] mr-0 mb-0 ml-[calc(87.1484375*var(--rpx))]">
-                  Nihar shah
-                </span>
-                <span className="flex w-[calc(127*var(--rpx))] h-[calc(62*var(--rpx))] justify-center items-start font-['Jost'] text-[calc(17.94757843017578*var(--rpx))] font-normal leading-[calc(30.510883331298828*var(--rpx))] text-[#313131] relative text-center z-[149] mt-[calc(0.6051425337791443*var(--rpx))] mr-0 mb-0 ml-[calc(112.126953125*var(--rpx))]">
-                  Financial AnalystFounder
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+
         {/* Team End */}
       </div>
       <>
@@ -317,7 +347,7 @@ const HomePage = () => {
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Title */}
           <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-            <h2 className="text-2xl font-bold  md:text-4xl md:leading-tight dark:text-white">
+          <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
               MEET THE TEAM
             </h2>
           </div>
@@ -376,7 +406,7 @@ const HomePage = () => {
         <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Blockquote */}
           <blockquote className="text-center lg:mx-auto lg:w-3/5">
-            <h2 className="text-2xl font-bold md:text-4xl md:leading-tight dark:text-white">
+          <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
               TESTIMONIALS
             </h2>
             <div className="mt-6 lg:mt-10">
