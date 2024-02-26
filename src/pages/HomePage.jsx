@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import hero from "../assets/hero.jpg";
 import service1min from "../assets/service1min.png";
 import service2min from "../assets/service2min.png";
@@ -9,13 +9,54 @@ import service6min from "../assets/service6min.png";
 import service7min from "../assets/service7min.png";
 
 const HomePage = () => {
+  const [navOpen, setNavOpen] = useState(false)
+
+  const toggleNav = ()=> {
+    setNavOpen(!navOpen)
+  }
+
   return (
     <>
       <div className="">
         {/* Nav */}
         <div>
-      <div className="flex max-md:flex-col max-md:gap-0 max-md:">
-        <div className="flex flex-col w-3/12 max-md:ml-0 max-md:w-full">
+      <div className={`max-md:flex-col max-md:gap-0 md:flex`}>
+      <button
+              data-collapse-toggle="navbar-sticky"
+              type="button"
+              className="inline-flex absolute z-30 border top-2 left-1 items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden "
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
+              onClick={toggleNav}
+            >
+              <span className="sr-only">Open main menu</span>
+              {!navOpen ? (
+                <svg
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="black"
+                  viewBox="0 0 17 14"
+                >
+                  <path
+                    stroke=""
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M1 1h15M1 7h15M1 13h15"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="w-10 h-10"
+                  fill="black"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+              )}
+            </button>
+        <div className={`flex absolute z-20 md:relative flex-col w-3/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
           <div className="flex flex-col grow items-center px-16 pt-12 pb-3 mx-auto w-full bg-white md:rounded-br-[4rem] shadow-[3px_0px_15px_rgba(0,0,0,0.25)] max-md:px-5">
             <img
               loading="lazy"
@@ -26,7 +67,7 @@ const HomePage = () => {
               <h2>It’s Your Turn</h2>
             </div>
             <div className="mt-3 text-3xl text-purple-900 whitespace-nowrap">
-             <h3 className="italic text-4xl"> Social Event Specialists</h3>
+             <h4 className="italic text-4xl"> Social Event Specialists</h4>
             </div>
             <div className="mt-20 text-xl text-purple-900 max-md:mt-10">
               Home
@@ -49,7 +90,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-9/12 max-md:ml-0 max-md:w-full">
+        <div className="flex-col w-9/12 max-md:ml-0 max-md:w-full hidden md:flex">
           <div className="flex overflow-hidden relative flex-col justify-center items-start px-14 py-12 min-h-[734px] max-md:px-5 max-md:max-w-full">
             <img
               loading="lazy"
@@ -58,9 +99,9 @@ const HomePage = () => {
             />
             <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[600px] max-md:px-5 max-md:mt-10">
               <div className="text-3xl tracking-widest text-center text-purple-900 max-md:max-w-full">
-              <h3 className="italic text-4xl">  Extra-ordinary Event delivered here....</h3>
+              <h4 className="italic text-4xl">  Extra-ordinary Event delivered here....</h4>
                 
-                <h3 className="italic text-4xl">Let us create magic for you!{" "}</h3>
+                <h4 className="italic text-4xl">Let us create magic for you!{" "}</h4>
               </div>
               <div className="mt-5 text-2xl tracking-wide text-center text-black max-md:max-w-full">
                 We are here to design your special days and create unforgettable
@@ -78,10 +119,40 @@ const HomePage = () => {
     </div>
         {/* Nav */}
         {/* Hero Start */}
-        {/* <div className="">
+        <div className="md:hidden">
+        <button
+              data-collapse-toggle="navbar-sticky"
+              type="button"
+              className="inline-flex absolute top-2 left-1 z-10 items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
+              onClick={toggleNav}
+            >
+              <span className="sr-only">Open main menu</span>
+              {!navOpen && (
+                <svg
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="white"
+                  viewBox="0 0 17 14"
+                >
+                  <path
+                    stroke="white"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M1 1h15M1 7h15M1 13h15"
+                  />
+                </svg>
+              )}
+            </button>
           <img src={hero} className="w-full h-[100vh] md:h-[70vh] object-cover" alt="" />
-          <div></div>
-        </div> */}
+          <div>
+          <h3 className="absolute z-10 top-40 mx-5 text-center text-white text-4xl">SWEET MEMORIES OF MARRIAGE PLANNER</h3>
+          </div>
+          <div className="absolute inset-0 bg-black h-[100vh] opacity-40"></div>
+        </div>
         {/* Hero End */}
 
 
@@ -105,12 +176,12 @@ const HomePage = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14">
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex flex-col bg-white border shadow-sm  hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
-                    className="w-full object-cover rounded-t-xl h-60"
+                    className="w-full object-cover  h-60"
                     src={service1min}
                     alt="Image Description"
                   />
@@ -124,12 +195,12 @@ const HomePage = () => {
               {/* End Card */}
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
-                    className="w-full object-cover rounded-t-xl h-60"
+                    className="w-full object-cover  h-60"
                     src={service2min}
                     alt="Image Description"
                   />
@@ -143,12 +214,12 @@ const HomePage = () => {
               {/* End Card */}
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
-                    className="w-full object-cover rounded-t-xl h-60"
+                    className="w-full object-cover  h-60"
                     src={service3min}
                     alt="Image Description"
                   />
@@ -162,12 +233,12 @@ const HomePage = () => {
               {/* End Card */}
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
-                    className="w-full object-cover rounded-t-xl h-60"
+                    className="w-full object-cover  h-60"
                     src={service4min}
                     alt="Image Description"
                   />
@@ -181,12 +252,12 @@ const HomePage = () => {
               {/* End Card */}
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
-                    className="w-full object-cover rounded-t-xl h-60"
+                    className="w-full object-cover  h-60"
                     src={service5min}
                     alt="Image Description"
                   />
@@ -200,12 +271,12 @@ const HomePage = () => {
               {/* End Card */}
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
-                    className="w-full object-cover rounded-t-xl h-60"
+                    className="w-full object-cover  h-60"
                     src={service6min}
                     alt="Image Description"
                   />
@@ -218,12 +289,12 @@ const HomePage = () => {
               </a>
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
-                    className="w-full object-cover rounded-t-xl h-60"
+                    className="w-full object-cover  h-60"
                     src={service7min}
                     alt="Image Description"
                   />
@@ -330,7 +401,7 @@ const HomePage = () => {
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">
           <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-              Gallary
+              Gallery
             </h2>
             <div
               class="elfsight-app-55b57f34-0050-4996-a52c-ca25d79553a1"
@@ -453,7 +524,7 @@ const HomePage = () => {
       {/* Ending Form Start */}
       <>
   {/* Hero */}
-  <div className="bg-slate-900">
+  <div className="bg-black">
     <div className="bg-gradient-to-b from-violet-600/[.15] via-transparent">
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
         {/* Announcement Banner */}
@@ -486,8 +557,8 @@ const HomePage = () => {
         {/* End Announcement Banner */}
         {/* Title */}
         <div className="max-w-3xl text-center mx-auto">
-          <h1 className="block font-medium text-gray-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-          IT’s Your Turn          </h1>
+          <h3 className="block font-bold text-gray-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          IT’s Your Turn          </h3>
         </div>
         {/* End Title */}
         <div className="max-w-3xl text-center mx-auto">
@@ -537,7 +608,9 @@ const HomePage = () => {
         href="/"
         aria-label="Brand"
       >
+        <h3>
         It's Your Turn
+      </h3>
       </a>
       <p className="mt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
       Contact us today to turn your social event into an extraordinary celebration..
@@ -547,9 +620,9 @@ const HomePage = () => {
     {/* End Col */}
 
     <div className="md:ml-20">
-      <h4 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">
+      <h3 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">
         Quick Link
-      </h4>
+      </h3>
       <div className="mt-3 grid space-y-3 text-sm">
         <p>
           <a
@@ -598,9 +671,9 @@ const HomePage = () => {
     </div>
     {/* End Col */}
     <div>
-      <h4 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">
+      <h3 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">
         Contact Us
-      </h4>
+      </h3>
       <div className="mt-3 grid space-y-3 text-sm">
         <p>
           <a
@@ -632,9 +705,9 @@ const HomePage = () => {
     </div>
     {/* End Col */}
     <div>
-      <h4 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">
+      <h3 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">
         Photograph
-      </h4>
+      </h3>
      
       
      
