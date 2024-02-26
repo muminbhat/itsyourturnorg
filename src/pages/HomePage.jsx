@@ -9,6 +9,8 @@ import service6min from "../assets/service6min.png";
 import service7min from "../assets/service7min.png";
 import phonecall from "../assets/phonecall.png"
 import lgo from "../assets/lgo.png"
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false)
@@ -19,7 +21,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="">
+      <div className="overflow-x-hidden">
         {/* Nav */}
         <div>
         <div className="md:hidden absolute z-20 top-1 left-1/2 transform -translate-x-1/2">
@@ -68,7 +70,7 @@ const HomePage = () => {
                 </svg>
               )}
             </button>
-        <div className={`flex absolute z-20 md:relative flex-col w-3/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
+        <div className={`flex absolute z-20 md:relative flex-col md:w-5/12 lg:w-4/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
           <div className="flex flex-col grow items-center px-16 pt-12 pb-3 mx-auto w-full bg-white md:rounded-br-[4rem] shadow-[3px_0px_15px_rgba(0,0,0,0.25)] max-md:px-5">
             <img
               loading="lazy"
@@ -79,15 +81,40 @@ const HomePage = () => {
               <h2>It’s Your Turn</h2>
             </div>
             <div className="mt-3 text-3xl text-purple-900 whitespace-nowrap">
-             <h4 className="italic text-4xl"> Social Event Specialists</h4>
+             <h4 className="italic text-4xl">Social Event Specialists</h4>
             </div>
-            <div className="mt-20 text-xl text-purple-900 max-md:mt-10">
+            <a href="/">
+            <div className="mt-20 cursor-pointer text-xl text-purple-900 max-md:mt-10">
               Home
             </div>
-            <div className="mt-7 text-xl text-purple-900"><p>Services</p></div>
-            <div className="mt-6 text-xl text-purple-900"><p>About</p></div>
-            <div className="mt-7 text-xl text-purple-900"><p>Blog</p></div>
-            <div className="mt-6 text-xl text-purple-900"><p>Contact</p></div>
+            </a>
+            <Link
+          to="services"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+            <div className="mt-7 cursor-pointer text-xl text-purple-900"><p>Services</p></div></Link>
+            <Link
+          to="event-orchestration"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+            <div className="mt-6 cursor-pointer text-xl text-purple-900"><p>Event Orchestration</p></div></Link>
+            <Link
+          to="gallery"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+            <div className="mt-7 cursor-pointer text-xl text-purple-900"><p>Gallery</p></div></Link>
+
+<a href="https://wa.me/8080332299/" target="blank">
+  <div className="mt-6 text-xl cursor-pointer text-purple-900"><p>Contact</p></div></a>
             <div className="mt-40 h-px bg-orange-400 w-[79px] max-md:mt-10" />
             <div className="flex gap-1 items-start mt-2 text-xl font-medium text-center text-purple-900 whitespace-nowrap">
              
@@ -111,7 +138,7 @@ const HomePage = () => {
             />
             <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[600px] max-md:px-5 max-md:mt-10">
               <div className="text-3xl tracking-widest text-center text-purple-900 max-md:max-w-full">
-              <h4 className="italic text-4xl">  Extra-ordinary Event delivered here....</h4>
+              <h4 className="italic text-4xl">  Extra-ordinary events delivered here....</h4>
                 
                 <h4 className="italic text-4xl">Let us create magic for you!{" "}</h4>
               </div>
@@ -163,6 +190,13 @@ const HomePage = () => {
           <div>
           <h3 className="absolute z-10 top-40 mx-5 text-center text-white text-4xl">SWEET MEMORIES OF MARRIAGE PLANNER</h3>
           </div>
+          <div className="absolute top-96 z-30 left-1/2 transform -translate-x-1/2 md:hidden">
+            <a href="https://wa.me/8080332299/">
+            <button className="text-white border-2 rounded-xl pt-4 pb-4 pl-6 pr-6 hover:bg-white hover:text-black">
+              Book Now
+            </button>
+            </a>
+          </div>
           <div className="absolute inset-0 bg-black h-[100vh] opacity-40"></div>
         </div>
         {/* Hero End */}
@@ -171,17 +205,13 @@ const HomePage = () => {
         {/* Services */}
         <>
           {/* Card Blog */}
-          <div className="max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-10 mx-auto">
+          <div className="max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-10 mx-auto" id="services">
             {/* Title */}
             <div className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
               <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
                 Our Services
               </h2>
-              <p className="mt-1 text-md md:text-xl text-gray-600 dark:text-gray-400">
-                Whether you're planning a corporate gathering, a wedding, or a
-                special celebration, our team of experts is here to turn your
-                vision into reality.
-              </p>
+            
             </div>
             {/* End Title */}
             {/* Grid */}
@@ -200,7 +230,7 @@ const HomePage = () => {
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    WEDDING PARTIES
+                    WEDDING
                   </h3>
                 </div>
               </a>
@@ -276,7 +306,7 @@ const HomePage = () => {
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    LUXURY & CORPORATE GIFTING
+                    LUXURY DECOR
                   </h3>
                 </div>
               </a>
@@ -327,12 +357,13 @@ const HomePage = () => {
         {/* Service End */}
 
         {/* Content Start */}
-        <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8  mx-auto">
+        <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8  mx-auto" id="event-orchestration">
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">
           <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
               Event Orchestration
             </h2>
+            <div className="text-start">
             <p className="mt-1 text-gray-600 dark:text-gray-400">
               Welcome to{" "}
               <span className="font-bold italic">It’s Your Turn,</span> where we
@@ -389,9 +420,11 @@ const HomePage = () => {
             <br />
             <br />
             <br />
+            <div className="text-center">
             <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
               Luxury CORPORATE Gifting
             </h2>
+            </div>
             <p className="mt-1 text-gray-600 dark:text-gray-400">
               Elevate your gifting experience with{" "}
               <span className="font-bold italic">It’s Your Turn,</span> and dive
@@ -402,14 +435,15 @@ const HomePage = () => {
               customizations to exclusive packaging, we redefine corporate
               gifting, turning every gesture into a symbol of distinction and
               appreciation. Choose sophistication, choose distinction, choose{" "}
-              <span className="font-bold italic">It’s Your Turn,</span>!
+              <span className="font-bold italic">It’s Your Turn</span>!
             </p>
+            </div>
           </div>
         </div>
         {/* Content End */}
 
         {/* Gallary Start*/}
-        <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8  mx-auto">
+        <div className="max-w-[85rem] px-4 sm:px-6 lg:px-8  mx-auto" id="gallery">
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">
           <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
@@ -471,10 +505,10 @@ const HomePage = () => {
                   Nihar Shah
                 </h3>
                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                  Financial
+                  Financial Analyst
                 </p>
                 <p className="text-xs text-gray-600 sm:text-sm lg:text-base dark:text-gray-400">
-                  AnalystFounder
+                  Founder
                 </p>
               </div>
             </div>
@@ -613,7 +647,7 @@ const HomePage = () => {
       {/* Start Footer */}
       <footer className="w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto bg-[#EFE8D9]">
   {/* Grid */}
-  <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10 md:mx-40">
+  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 md:mx-40">
     <div className="col-span-full hidden lg:col-span-1 lg:block">
       <a
         className="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
@@ -716,14 +750,7 @@ const HomePage = () => {
       </div>
     </div>
     {/* End Col */}
-    <div>
-      <h3 className="text-xs font-semibold text-gray-900 uppercase dark:text-gray-100">
-        Photograph
-      </h3>
-     
-      
-     
-    </div>
+   
     {/* End Col */}
   </div>
   {/* End Grid */}
