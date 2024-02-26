@@ -7,6 +7,8 @@ import service4min from "../assets/service4min.png";
 import service5min from "../assets/service5min.png";
 import service6min from "../assets/service6min.png";
 import service7min from "../assets/service7min.png";
+import phonecall from "../assets/phonecall.png"
+import lgo from "../assets/lgo.png"
 
 const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false)
@@ -21,6 +23,15 @@ const HomePage = () => {
         {/* Nav */}
         <div>
       <div className={`max-md:flex-col max-md:gap-0 md:flex`}>
+
+<a href="https://wa.me/8080332299/">
+        <div className="md:hidden absolute top-4 right-5 z-20">
+          <img src={phonecall} alt="" className="h-7 w-full" />
+        </div>
+        </a>
+        <div className="md:hidden absolute z-20 top-1 left-32">
+          <img src={lgo} alt="" className="w-20" />
+        </div>
       <button
               data-collapse-toggle="navbar-sticky"
               type="button"
