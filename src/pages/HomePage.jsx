@@ -188,7 +188,7 @@ const HomePage = () => {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14">
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm  hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
+                className="group flex flex-col  bg-white border shadow-sm  hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
@@ -311,7 +311,7 @@ const HomePage = () => {
                     alt="Image Description"
                   />
                 </div>
-                <div className="p-4 md:p-5">
+                <div className="p-4 md:p-5 ">
                   <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
                     EVENT PLANNING
                   </h3>
