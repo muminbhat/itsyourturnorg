@@ -22,6 +22,9 @@ const HomePage = () => {
       <div className="">
         {/* Nav */}
         <div>
+        <div className="md:hidden absolute z-20 top-1 left-1/2 transform -translate-x-1/2">
+          <img src={lgo} alt="" className="w-20" />
+        </div>
       <div className={`max-md:flex-col max-md:gap-0 md:flex`}>
 
 <a href="https://wa.me/8080332299/">
@@ -29,9 +32,7 @@ const HomePage = () => {
           <img src={phonecall} alt="" className="h-7 w-full" />
         </div>
         </a>
-        <div className="md:hidden absolute z-20 top-1 left-32">
-          <img src={lgo} alt="" className="w-20" />
-        </div>
+       
       <button
               data-collapse-toggle="navbar-sticky"
               type="button"
