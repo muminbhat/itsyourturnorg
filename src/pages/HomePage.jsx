@@ -230,7 +230,7 @@ const HomePage = () => {
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    WEDDING
+                    WEDDINGS
                   </h3>
                 </div>
               </a>
@@ -287,7 +287,7 @@ const HomePage = () => {
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    LUXARY DECOR
+                    LUXURY DECOR
                   </h3>
                 </div>
               </a>
@@ -306,7 +306,7 @@ const HomePage = () => {
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    LUXURY DECOR
+                    LUXURY GIFTING
                   </h3>
                 </div>
               </a>
@@ -455,11 +455,11 @@ const HomePage = () => {
             />
           </div>
         </div>
+ 
         {/* Gallary End */}
-
         {/* Team Start */}
-
         {/* Team End */}
+ 
       </div>
       <>
         {/* Team */}
@@ -519,7 +519,6 @@ const HomePage = () => {
         {/* End Team */}
       </>
       {/* Team End */}
-
       <>
         {/* Testimonials */}
         <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
