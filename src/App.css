@@ -15,3 +15,8 @@
     opacity: 1;
     filter: blur(0);
   }
+
+  .hero-container img.opacity-transition {
+    transition: opacity 1s ease;
+    background-color: black;
+  }

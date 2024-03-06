@@ -53,15 +53,15 @@ const HomePage = () => {
       <button
               data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex absolute z-30 border top-2 left-1 items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden "
+              className="inline-flex absolute z-50 border top-2 left-1 items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden "
               aria-controls="navbar-sticky"
               aria-expanded="false"
               onClick={toggleNav}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only ">Open main menu</span>
               {!navOpen ? (
                 <svg
-                  className="w-5 h-5"
+                  className="w-5 h-5 z-50"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="black"
@@ -77,7 +77,7 @@ const HomePage = () => {
                 </svg>
               ) : (
                 <svg
-                  className="w-10 h-10"
+                  className="w-10 h-10 z-50"
                   fill="black"
                   viewBox="0 0 16 16"
                 >
@@ -85,7 +85,7 @@ const HomePage = () => {
                 </svg>
               )}
             </button>
-        <div className={`flex absolute z-20 md:relative flex-col md:w-5/12 lg:w-4/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
+        <div className={`flex absolute z-40 md:relative flex-col md:w-5/12 lg:w-4/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
           <div className="flex flex-col grow items-center px-16 pt-12 pb-3 mx-auto w-full bg-white md:rounded-br-[4rem] shadow-[3px_0px_15px_rgba(0,0,0,0.25)] max-md:px-5">
             <img
               loading="lazy"
@@ -204,7 +204,18 @@ const HomePage = () => {
                 </svg>
               )}
             </button>
-          <img src={hero} className="w-full h-[100vh] md:h-[70vh] object-cover" alt="" />
+            {/* Phone Version Start*/}
+            <div className="hero-container">
+          {imageList.map((image, index) => (
+    <img
+      key={index}
+      src={image}
+      alt={`hero-${index + 1}`}
+      className={index === currentImageIndex ? 'active w-full h-[100vh] md:h-[70vh] object-cover opacity-transition' : 'object-cover w-full h-[100vh] md:h-[70vh] opacity-transition'}
+    />
+))}
+</div>
+            {/* Phone Version End */}
           <div>
           <h3 className="absolute z-10 top-40 mx-5 text-center text-white text-4xl">SWEET MEMORIES OF MARRIAGE PLANNER</h3>
           </div>
@@ -223,7 +234,7 @@ const HomePage = () => {
         {/* Services */}
         <>
           {/* Card Blog */}
-          <div className="max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-10 mx-auto" id="services">
+          <div className="max-w-[85rem] px-4 py-5 sm:px-6 lg:px-8 lg:py-10 mt-[100vh] md:mt-2 mx-auto" id="services">
             {/* Title */}
             <div className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
               <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
