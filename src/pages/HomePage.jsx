@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import hero from "../assets/hero.jpg";
 import service1min from "../assets/service1min.png";
 import service2min from "../assets/service2min.png";
@@ -8,13 +8,28 @@ import service5min from "../assets/service5min.png";
 import service6min from "../assets/service6min.png";
 import service7min from "../assets/service7min.png";
 import phonecall from "../assets/phonecall.png"
+import hero1 from "../assets/hero1.png"
+import hero2 from "../assets/hero2.JPG"
+import hero3 from "../assets/hero3.JPG"
 import lgo from "../assets/lgo.png"
 import { Link, animateScroll as scroll } from "react-scroll";
 
+const imageList = [hero1, hero2, hero3];
 
 const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageList.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  
   const toggleNav = ()=> {
     setNavOpen(!navOpen)
   }
@@ -130,12 +145,15 @@ const HomePage = () => {
           </div>
         </div>
         <div className="flex-col w-9/12 max-md:ml-0 max-md:w-full hidden md:flex">
-          <div className="flex overflow-hidden relative flex-col justify-center items-start px-14 py-12 min-h-[734px] max-md:px-5 max-md:max-w-full">
-            <img
-              loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/d04ee748b1d103c13ead236e4b6f335a6cd6617092fe03d4e1f0f995dce7bfeb?apiKey=5832d9011e934559997a42b2b3992b06&"
-              className="object-cover absolute inset-0 size-full"
-            />
+          <div className="flex hero-container overflow-hidden relative flex-col justify-center items-start px-14 py-12 min-h-[734px] max-md:px-5 max-md:max-w-full">
+          {imageList.map((image, index) => (
+    <img
+      key={index}
+      src={image}
+      alt={`hero-${index + 1}`}
+      className={index === currentImageIndex ? 'active object-cover opacity-transition absolute inset-0 size-full' : 'object-cover absolute opacity-transition inset-0 size-full'}
+    />
+))}
             <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[600px] max-md:px-5 max-md:mt-10">
               <div className="text-3xl tracking-widest text-center text-purple-900 max-md:max-w-full">
               <h4 className="italic text-4xl">  Extra-ordinary events delivered here....</h4>
@@ -215,7 +233,7 @@ const HomePage = () => {
             </div>
             {/* End Title */}
             {/* Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14 ">
               {/* Card */}
               <a
                 className="group flex flex-col  bg-white border shadow-sm  hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
@@ -294,7 +312,7 @@ const HomePage = () => {
               {/* End Card */}
               {/* Card */}
               <a
-                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                className="group flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 href="/"
               >
                 <div className="aspect-w-16 aspect-h-9">
@@ -347,11 +365,11 @@ const HomePage = () => {
                   </h3>
                 </div>
               </a>
+              </div>
               {/* End Card */}
               {/* End Card */}
             </div>
             {/* End Card */}
-          </div>
           {/* End Card Blog */}
         </>
         {/* Service End */}
