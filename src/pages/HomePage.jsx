@@ -128,7 +128,7 @@ const HomePage = () => {
         >
             <div className="mt-7 cursor-pointer text-xl text-purple-900"><p>Gallery</p></div></Link>
 
-<a href="https://wa.me/8080332299/" target="blank">
+<a href="https://wa.me/+918080332299/" target="blank">
   <div className="mt-6 text-xl cursor-pointer text-purple-900"><p>Contact</p></div></a>
             <div className="mt-40 h-px bg-orange-400 w-[79px] max-md:mt-10" />
             <div className="flex gap-1 items-start mt-2 text-xl font-medium text-center text-purple-900 whitespace-nowrap">
@@ -154,18 +154,18 @@ const HomePage = () => {
       className={index === currentImageIndex ? 'active object-cover opacity-transition absolute inset-0 size-full' : 'object-cover absolute opacity-transition inset-0 size-full'}
     />
 ))}
-            <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[600px] max-md:px-5 max-md:mt-10">
-              <div className="text-3xl tracking-widest text-center text-purple-900 max-md:max-w-full">
-              <h4 className="italic text-4xl">  Extra-ordinary events delivered here....</h4>
+            <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[500px] max-md:px-5 max-md:mt-10">
+              <div className="text-1xl tracking-widest text-center text-purple-900 max-md:max-w-full">
+              <h4 className="italic text-2xl font-bold">  Extra-ordinary events delivered here....</h4>
                 
-                <h4 className="italic text-4xl">Let us create magic for you!{" "}</h4>
+                <h4 className="italic text-3xl font-bold">Let us create magic for you!{" "}</h4>
               </div>
-              <div className="mt-5 text-2xl tracking-wide text-center text-black max-md:max-w-full">
+              <div className="mt-5 text-1xl tracking-wide text-center text-black max-md:max-w-full">
                 We are here to design your special days and create unforgettable
                 memories
               </div>
-              <a href="https://wa.me/8080332299/" target="blank" className=" self-center">
-              <div className="justify-center self-center px-10 py-3.5 mt-2.5 text-xl font-medium text-white whitespace-nowrap bg-purple-900 shadow-sm max-md:px-5">
+              <a href="https://wa.me/+918080332299/" target="blank" className=" self-center">
+              <div className="justify-center self-center px-10 py-2.5 mt-2.5 text-md font-medium text-white whitespace-nowrap bg-purple-900 shadow-sm max-md:px-5">
                 Book Now
               </div>
               </a>
