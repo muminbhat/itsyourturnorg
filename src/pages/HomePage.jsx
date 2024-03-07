@@ -36,7 +36,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden ">
         {/* Nav */}
         <div>
         <div className="md:hidden absolute z-20 top-1 left-1/2 transform -translate-x-1/2">
@@ -45,7 +45,7 @@ const HomePage = () => {
       <div className={`max-md:flex-col max-md:gap-0 md:flex`}>
 
 <a href="https://wa.me/8080332299/">
-        <div className="md:hidden absolute top-4 right-5 z-20">
+        <div className="md:hidden absolute top-4 right-5 z-20 ">
           <img src={phonecall} alt="" className="h-7 w-full" />
         </div>
         </a>
@@ -85,18 +85,18 @@ const HomePage = () => {
                 </svg>
               )}
             </button>
-        <div className={`flex absolute z-40 md:relative flex-col md:w-5/12 lg:w-3/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
-          <div className="flex flex-col grow items-center px-16 pt-12 pb-3 mx-auto w-full bg-white md:rounded-br-[4rem] shadow-[3px_0px_15px_rgba(0,0,0,0.25)] max-md:px-5">
+        <div className={`flex absolute z-40 md:relative flex-col md:w-5/12 lg:w-3/12 xl:w-2/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
+          <div className="flex flex-col grow items-center px-12 pt-12 pb-3 mx-auto w-full bg-white md:rounded-br-[4rem] shadow-[3px_0px_15px_rgba(0,0,0,0.25)] max-md:px-5">
             <img
               loading="lazy"
               srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/32c02a980314fe54b1bca88401efba3c8959520b6f6fcaa91acd0dc5df37062a?apiKey=5832d9011e934559997a42b2b3992b06&"
               className="max-w-full aspect-[1.08] fill-purple-900 w-[115px]"
             />
-            <div className="mt-9 text-3xl font-bold text-black whitespace-nowrap">
+            <div className="mt-9 text-2xl  font-bold text-black whitespace-nowrap">
               <h2>It’s Your Turn</h2>
             </div>
             <div className="mt-3 text-3xl text-purple-900 whitespace-nowrap">
-             <h4 className="italic text-4xl">Social Event Specialists</h4>
+             <h4 className="italic text-2xl">Social Event Specialists</h4>
             </div>
             <a href="/">
             <div className="mt-20 cursor-pointer text-xl text-purple-900 max-md:mt-10">
@@ -129,7 +129,7 @@ const HomePage = () => {
             <div className="mt-7 cursor-pointer text-xl text-purple-900"><p>Gallery</p></div></Link>
 
 <a href="https://wa.me/+918080332299/" target="blank">
-  <div className="mt-6 text-xl cursor-pointer text-purple-900"><p>Contact</p></div></a>
+  <div className="mt-6 text-xl cursor-pointer  text-purple-900"><p>Contact</p></div></a>
             <div className="mt-40 h-px bg-orange-400 w-[79px] max-md:mt-10" />
             <div className="flex gap-1 items-start mt-2 text-xl font-medium text-center text-purple-900 whitespace-nowrap">
              
@@ -139,12 +139,10 @@ const HomePage = () => {
               </div>
              
             </div>
-            <div className="flex gap-5 justify-between self-stretch pr-6 mt-2.5 max-md:pr-5">
-              
-            </div>
+
           </div>
         </div>
-        <div className="flex-col w-9/12 max-md:ml-0 max-md:w-full hidden md:flex">
+        <div className="flex-col w-10/12 max-md:ml-0 max-md:w-full hidden md:flex">
           <div className="flex hero-container overflow-hidden relative flex-col justify-center items-start px-14 py-12 min-h-[734px] max-md:px-5 max-md:max-w-full">
           {imageList.map((image, index) => (
     <img
@@ -153,19 +151,20 @@ const HomePage = () => {
       alt={`hero-${index + 1}`}
       className={index === currentImageIndex ? 'active object-cover opacity-transition absolute inset-0 size-full' : 'object-cover absolute opacity-transition inset-0 size-full'}
     />
-))}
-            <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[500px] max-md:px-5 max-md:mt-10 backdrop-filter backdrop-blur-lg bg-opacity-70 dark:bg-opacity-80 rounded-br-3xl">
-              <div className="text-1xl tracking-widest text-center text-purple-900 max-md:max-w-full">
-              <h4 className="italic text-3xl font-bold">  Extra-ordinary events delivered here....</h4>
+    ))}
+    <div className="absolute inset-0 bg-black opacity-60"/>
+            <div className="flex relative flex-col px-9 py-5 mt-40 left-0 lg:left-16 xl:left-60 max-w-full rounded-br-3xl">
+              <div className="text-1xl tracking-widest text-center text-purple-400 max-md:max-w-full">
+              <h4 className="italic text-5xl font-bold">  Extra-ordinary events delivered here....</h4>
                 
-                <h4 className="italic text-3xl font-bold">Let us create magic for you!{" "}</h4>
+                <h4 className="italic text-5xl font-bold">Let us create magic for you!{" "}</h4>
               </div>
-              <div className="mt-5 text-1xl tracking-wide text-center text-black max-md:max-w-full">
+              <div className="mt-5 text-1xl tracking-wide font-bold text-center text-white max-md:max-w-full">
                 We are here to design your special days and create unforgettable
                 memories
               </div>
               <a href="https://wa.me/+918080332299/" target="blank" className=" self-center">
-              <div className="justify-center self-center px-10 py-2.5 mt-2.5 text-md font-medium text-white whitespace-nowrap bg-purple-900 shadow-sm max-md:px-5">
+              <div className="justify-center self-center px-10 py-2.5 mt-2.5 text-md font-medium text-white whitespace-nowrap bg-purple-600 shadow-sm max-md:px-5">
                 Book Now
               </div>
               </a>
