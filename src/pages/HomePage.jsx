@@ -85,7 +85,7 @@ const HomePage = () => {
                 </svg>
               )}
             </button>
-        <div className={`flex absolute z-40 md:relative flex-col md:w-5/12 lg:w-4/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
+        <div className={`flex absolute z-40 md:relative flex-col md:w-5/12 lg:w-3/12 max-md:ml-0 max-md:w-full md:flex ${!navOpen ? "hidden" : ""}`}>
           <div className="flex flex-col grow items-center px-16 pt-12 pb-3 mx-auto w-full bg-white md:rounded-br-[4rem] shadow-[3px_0px_15px_rgba(0,0,0,0.25)] max-md:px-5">
             <img
               loading="lazy"
