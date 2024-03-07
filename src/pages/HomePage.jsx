@@ -154,9 +154,9 @@ const HomePage = () => {
       className={index === currentImageIndex ? 'active object-cover opacity-transition absolute inset-0 size-full' : 'object-cover absolute opacity-transition inset-0 size-full'}
     />
 ))}
-            <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[500px] max-md:px-5 max-md:mt-10">
+            <div className="flex relative flex-col px-9 py-5 mt-96 max-w-full bg-white shadow-sm w-[500px] max-md:px-5 max-md:mt-10 backdrop-filter backdrop-blur-lg bg-opacity-70 dark:bg-opacity-80 rounded-br-3xl">
               <div className="text-1xl tracking-widest text-center text-purple-900 max-md:max-w-full">
-              <h4 className="italic text-2xl font-bold">  Extra-ordinary events delivered here....</h4>
+              <h4 className="italic text-3xl font-bold">  Extra-ordinary events delivered here....</h4>
                 
                 <h4 className="italic text-3xl font-bold">Let us create magic for you!{" "}</h4>
               </div>
