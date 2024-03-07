@@ -376,6 +376,24 @@ const HomePage = () => {
                   </h3>
                 </div>
               </a>
+
+              <a
+                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="/"
+              >
+                <div className="aspect-w-16 aspect-h-9">
+                  <img
+                    className="w-full object-cover  h-60"
+                    src={hero2}
+                    alt="Image Description"
+                  />
+                </div>
+                <div className="p-4 md:p-5">
+                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
+                  Sangeet Choreography
+                  </h3>
+                </div>
+              </a>
               </div>
               {/* End Card */}
               {/* End Card */}
