@@ -638,6 +638,9 @@ const HomePage = () => {
               <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 cursor-grab">
               <Swiper
       effect="flip"
+      pagination={{
+        dynamicBullets: true,
+      }}
       modules={[Navigation, Pagination, Autoplay, EffectFlip]}
       spaceBetween={20}
       slidesPerView={1}
