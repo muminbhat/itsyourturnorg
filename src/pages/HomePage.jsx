@@ -14,6 +14,9 @@ import hero3 from "../assets/hero3.JPG";
 import hero4 from "../assets/hero4.jpg";
 import hero5 from "../assets/hero5.jpg";
 import hero6 from "../assets/hero6.jpg";
+import hero7 from "../assets/hero7.jpg";
+import hero8 from "../assets/hero8.jpg";
+import hero9 from "../assets/hero9.jpg";
 
 import lgo from "../assets/lgo.png";
 
@@ -28,7 +31,7 @@ import { Navigation, Pagination, Autoplay, EffectCoverflow, EffectFlip } from "s
 import { Link, animateScroll as scroll } from "react-scroll";
 import testimonialSlider from "../data/testimonialSlider";
 
-const imageList = [hero1, hero2, hero3, hero4, hero5, hero6];
+const imageList = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9];
 
 const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false);
