@@ -11,6 +11,10 @@ import phonecall from "../assets/phonecall.png";
 import hero1 from "../assets/hero1.png";
 import hero2 from "../assets/hero2.JPG";
 import hero3 from "../assets/hero3.JPG";
+import hero4 from "../assets/hero4.jpg";
+import hero5 from "../assets/hero5.jpg";
+import hero6 from "../assets/hero6.jpg";
+
 import lgo from "../assets/lgo.png";
 
 // Swiper
@@ -24,7 +28,7 @@ import { Navigation, Pagination, Autoplay, EffectCoverflow, EffectFlip } from "s
 import { Link, animateScroll as scroll } from "react-scroll";
 import testimonialSlider from "../data/testimonialSlider";
 
-const imageList = [hero1, hero2, hero3];
+const imageList = [hero1, hero2, hero3, hero4, hero5, hero6];
 
 const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false);
