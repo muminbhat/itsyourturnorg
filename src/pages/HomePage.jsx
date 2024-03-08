@@ -12,6 +12,17 @@ import hero1 from "../assets/hero1.png"
 import hero2 from "../assets/hero2.JPG"
 import hero3 from "../assets/hero3.JPG"
 import lgo from "../assets/lgo.png"
+
+// Swiper
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, EffectCards } from "swiper/modules";
+
+
+
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const imageList = [hero1, hero2, hero3];
@@ -118,7 +129,7 @@ const HomePage = () => {
           offset={-70}
           duration={500}
         >
-            <div className="mt-6 cursor-pointer text-xl text-purple-900"><p>Event Orchestration</p></div></Link>
+            <div className="mt-6 cursor-pointer text-xl text-center text-purple-900"><p>Event Orchestration</p></div></Link>
             <Link
           to="gallery"
           spy={true}
