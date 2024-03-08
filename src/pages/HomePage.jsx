@@ -137,9 +137,7 @@ const HomePage = () => {
                 <div className="self-center"><p>+91 8080332299</p></div>
                 <div className="mt-1"><p>itsyourturn.in@gmail.com</p></div>
               </div>
-             
             </div>
-
           </div>
         </div>
         <div className="flex-col w-10/12 max-md:ml-0 max-md:w-full hidden md:flex">
@@ -153,7 +151,7 @@ const HomePage = () => {
     />
     ))}
     <div className="absolute inset-0 bg-black opacity-60"/>
-            <div className="flex relative flex-col px-9 py-5 mt-40 left-0 lg:left-16 xl:left-60 max-w-full rounded-br-3xl">
+            <div className="flex relative flex-col px-9 py-5 left-0 lg:left-16 xl:left-60 max-w-full rounded-br-3xl">
               <div className="text-1xl tracking-widest text-center text-purple-400 max-md:max-w-full">
               <h4 className="italic text-5xl font-bold">  Extra-ordinary events delivered here....</h4>
                 
