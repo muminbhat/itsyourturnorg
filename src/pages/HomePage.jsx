@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import hero from "../assets/hero.jpg";
-import service1min from "../assets/service1min.png";
-import service2min from "../assets/service2min.png";
-import service3min from "../assets/service3min.png";
-import service4min from "../assets/service4min.png";
-import service5min from "../assets/service5min.png";
-import service6min from "../assets/service6min.png";
-import service7min from "../assets/service7min.png";
+import { useInView } from "react-intersection-observer";
 import phonecall from "../assets/phonecall.png";
 import hero1 from "../assets/hero1.png";
 import hero2 from "../assets/hero2.JPG";
@@ -31,11 +24,34 @@ import { Navigation, Pagination, Autoplay, EffectCoverflow, EffectFlip } from "s
 import { Link, animateScroll as scroll } from "react-scroll";
 import testimonialSlider from "../data/testimonialSlider";
 
+// Framer
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import servicesData from "../data/servicesData";
+
+
 const imageList = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9];
+
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 2,
+  }, 
+  animate: (index)=> ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.2 * index,
+      duration: 0.3,
+    },
+  })
+}
+
 
 const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const { ref, inView } = useInView();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,6 +64,21 @@ const HomePage = () => {
   const toggleNav = () => {
     setNavOpen(!navOpen);
   };
+
+  // Text Writing Animation
+  
+  // Hero
+  const heroTitleOne = "Extra-ordinary events delivered here...."
+  const heroTitleTwo = "Let us create magic for you!"
+  const heroTitleThree = "We are here to design your special days and create unforgettable memories"
+
+  // Serivces
+  const servicesanim = "Our Services";
+  const eventsanim = "Event Orchestration"
+  const giftinganim = "Luxury CORPORATE Gifting"
+  const gallaryanim = "Gallery"
+  const teamanim = "MEET THE TEAM"
+  const testimonialsanim = "TESTIMONIALS"
 
   return (
     <>
@@ -139,9 +170,10 @@ const HomePage = () => {
                   offset={-70}
                   duration={500}
                 >
-                  <div className="mt-6 cursor-pointer text-xl text-center text-purple-900">
+                  
+                  <h2 className="mt-6 cursor-pointer text-xl text-center text-purple-900">
                     <p>Event Orchestration</p>
-                  </div>
+                  </h2>
                 </Link>
                 <Link
                   to="gallery"
@@ -190,27 +222,50 @@ const HomePage = () => {
                 <div className="absolute inset-0 bg-black opacity-60" />
                 <div className="flex relative flex-col px-9 py-5 left-0 lg:left-16 xl:left-60 max-w-full rounded-br-3xl">
                   <div className="text-1xl tracking-widest text-center text-white max-md:max-w-full">
-                    <h4 className="italic text-5xl font-bold">
-                      {" "}
-                      Extra-ordinary events delivered here....
-                    </h4>
+                    <motion.h4 ref={ref} className="italic text-5xl font-bold">
+                    <AnimatePresence initial={true}>
+                    {heroTitleOne.split("").map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            style={{ display: "inline-block" }}
+          >
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))} 
+                    </AnimatePresence>
+                    </motion.h4>
 
-                    <h4 className="italic text-5xl font-bold">
-                      Let us create magic for you!{" "}
-                    </h4>
-                  </div>
-                  <div className="mt-5 text-1xl tracking-wide font-bold text-center text-white max-md:max-w-full">
-                    We are here to design your special days and create
-                    unforgettable memories
+                    <motion.h4 ref={ref} className="italic text-5xl font-bold">
+                    <AnimatePresence initial={true}>
+                    {heroTitleTwo.split("").map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 2, delay: index * 0.1 }}
+            style={{ display: "inline-block" }}
+          >
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))} 
+                    </AnimatePresence>
+                    </motion.h4>
                   </div>
                   <a
                     href="https://wa.me/+918080332299/"
                     target="blank"
                     className=" self-center"
                   >
-                    <div className="justify-center self-center px-10 py-2.5 mt-2.5 text-md font-medium text-white whitespace-nowrap bg-purple-600 shadow-sm max-md:px-5">
+                    <motion.div 
+                     initial={{ opacity: 0, y: 20 }}
+                     animate = {{opacity: 1, y: 0}}
+                     transition={{duration:0.7, delay: 2.5}}
+                    className="justify-center self-center px-10 py-2.5 mt-2.5 text-md font-medium text-white whitespace-nowrap bg-purple-600 shadow-sm max-md:px-5">
                       Book Now
-                    </div>
+                    </motion.div>
                   </a>
                 </div>
               </div>
@@ -287,163 +342,64 @@ const HomePage = () => {
             id="services"
           >
             {/* Title */}
-            <div className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
-              <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-                Our Services
-              </h2>
+            <div
+            className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
+  <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+
+      <AnimatePresence initial={true}>
+        {servicesanim.split("").map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileInView="animate"
+            viewport={{
+              once: true,
+            }}
+            style={{ display: "inline-block" }}
+          >
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))}
+      </AnimatePresence>
+
+    </motion.h2>
             </div>
             {/* End Title */}
             {/* Grid */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-14 ">
+              {servicesData.map((service, index)=> (
+                <div key={index}> 
               {/* Card */}
-              <a
+              <motion.a
                 className="group flex flex-col  bg-white border shadow-sm  hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
                 href="/"
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{
+                  once: true,
+                }}
+                custom={index}
               >
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     className="w-full object-cover  h-60"
-                    src={service1min}
+                    src={service.image}
                     alt="Image Description"
                   />
                 </div>
                 <div className="p-4 md:p-5">
                   <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    WEDDINGS
+                    {service.name}
                   </h3>
                 </div>
-              </a>
+              </motion.a>
               {/* End Card */}
-              {/* Card */}
-              <a
-                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
-                href="/"
-              >
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="w-full object-cover  h-60"
-                    src={service2min}
-                    alt="Image Description"
-                  />
-                </div>
-                <div className="p-4 md:p-5">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    MILESTONE EVENTS
-                  </h3>
-                </div>
-              </a>
-              {/* End Card */}
-              {/* Card */}
-              <a
-                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 "
-                href="/"
-              >
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="w-full object-cover  h-60"
-                    src={service3min}
-                    alt="Image Description"
-                  />
-                </div>
-                <div className="p-4 md:p-5">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    PHOTOGRAPHY & VIDEOGRAPHY
-                  </h3>
-                </div>
-              </a>
-              {/* End Card */}
-              {/* Card */}
-              <a
-                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="/"
-              >
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="w-full object-cover  h-60"
-                    src={service4min}
-                    alt="Image Description"
-                  />
-                </div>
-                <div className="p-4 md:p-5">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    LUXURY DECOR
-                  </h3>
-                </div>
-              </a>
-              {/* End Card */}
-              {/* Card */}
-              <a
-                className="group flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="/"
-              >
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="w-full object-cover  h-60"
-                    src={service5min}
-                    alt="Image Description"
-                  />
-                </div>
-                <div className="p-4 md:p-5">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    LUXURY GIFTING
-                  </h3>
-                </div>
-              </a>
-              {/* End Card */}
-              {/* Card */}
-              <a
-                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="/"
-              >
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="w-full object-cover  h-60"
-                    src={service6min}
-                    alt="Image Description"
-                  />
-                </div>
-                <div className="p-4 md:p-5">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    VENUE SOURCING
-                  </h3>
-                </div>
-              </a>
-              {/* Card */}
-              <a
-                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="/"
-              >
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="w-full object-cover  h-60"
-                    src={service7min}
-                    alt="Image Description"
-                  />
-                </div>
-                <div className="p-4 md:p-5 ">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    EVENT PLANNING
-                  </h3>
-                </div>
-              </a>
-
-              <a
-                className="group flex flex-col bg-white border shadow-sm hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                href="/"
-              >
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="w-full object-cover  h-60"
-                    src={hero2}
-                    alt="Image Description"
-                  />
-                </div>
-                <div className="p-4 md:p-5">
-                  <h3 className="mt-2 text-lg font-medium text-gray-800 group-hover:text-blue-600 dark:text-gray-300 dark:group-hover:text-white">
-                    Sangeet Choreography
-                  </h3>
-                </div>
-              </a>
+              </div>
+              ))}
+             
             </div>
             {/* End Card */}
             {/* End Card */}
@@ -459,10 +415,28 @@ const HomePage = () => {
           id="event-orchestration"
         >
           {/* Title */}
-          <div className="text-center mx-auto mb-10 lg:mb-14">
-            <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-              Event Orchestration
-            </h2>
+          <div className="text-center mx-auto mb-10 lg:mb-14">              
+            <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+
+<AnimatePresence initial={true}>
+  {eventsanim.split("").map((letter, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      style={{ display: "inline-block" }}
+    >
+      {letter === " " ? "\u00A0" : letter}
+    </motion.span>
+  ))}
+</AnimatePresence>
+
+</motion.h2>
             <div className="text-start">
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Welcome to{" "}
@@ -524,9 +498,27 @@ const HomePage = () => {
               <br />
               <br />
               <div className="text-center">
-                <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-                  Luxury CORPORATE Gifting
-                </h2>
+              <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+
+<AnimatePresence initial={true}>
+  {giftinganim.split("").map((letter, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      style={{ display: "inline-block" }}
+    >
+      {letter === " " ? "\u00A0" : letter}
+    </motion.span>
+  ))}
+</AnimatePresence>
+
+</motion.h2>
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Elevate your gifting experience with{" "}
@@ -553,9 +545,27 @@ const HomePage = () => {
         >
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">
-            <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-              Gallery
-            </h2>
+          <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+
+<AnimatePresence initial={true}>
+  {gallaryanim.split("").map((letter, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      style={{ display: "inline-block" }}
+    >
+      {letter === " " ? "\u00A0" : letter}
+    </motion.span>
+  ))}
+</AnimatePresence>
+
+</motion.h2>
             <div
               class="elfsight-app-55b57f34-0050-4996-a52c-ca25d79553a1"
               data-elfsight-app-lazy
@@ -572,9 +582,27 @@ const HomePage = () => {
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Title */}
           <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-            <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-              MEET THE TEAM
-            </h2>
+          <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+
+<AnimatePresence initial={true}>
+  {teamanim.split("").map((letter, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      style={{ display: "inline-block" }}
+    >
+      {letter === " " ? "\u00A0" : letter}
+    </motion.span>
+  ))}
+</AnimatePresence>
+
+</motion.h2>
           </div>
           {/* End Title */}
           {/* Grid */}
@@ -630,9 +658,27 @@ const HomePage = () => {
         <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Blockquote */}
           <blockquote className="text-center lg:mx-auto lg:w-3/5">
-            <h2 className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-              TESTIMONIALS
-            </h2>
+          <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+
+<AnimatePresence initial={true}>
+  {testimonialsanim.split("").map((letter, index) => (
+    <motion.span
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileInView="animate"
+      viewport={{
+        once: true,
+      }}
+      style={{ display: "inline-block" }}
+    >
+      {letter === " " ? "\u00A0" : letter}
+    </motion.span>
+  ))}
+</AnimatePresence>
+
+</motion.h2>
 
             <section className="bg-white">
               <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 cursor-grab">
