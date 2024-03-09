@@ -68,6 +68,8 @@ const HomePage = () => {
   // Text Writing Animation
   
   // Hero
+  const mobileHero = "SWEET MEMORIES OF MARRIAGE PLANNER"
+
   const heroTitleOne = "Extra-ordinary events delivered here...."
   const heroTitleTwo = "Let us create magic for you!"
   const heroTitleThree = "We are here to design your special days and create unforgettable memories"
@@ -79,6 +81,8 @@ const HomePage = () => {
   const gallaryanim = "Gallery"
   const teamanim = "MEET THE TEAM"
   const testimonialsanim = "TESTIMONIALS"
+
+
 
   return (
     <>
@@ -319,15 +323,31 @@ const HomePage = () => {
           </div>
           {/* Phone Version End */}
           <div>
-            <h3 className="absolute z-10 top-40 mx-5 text-center text-white text-4xl">
-              SWEET MEMORIES OF MARRIAGE PLANNER
-            </h3>
+            <motion.h3 className="absolute z-10 top-40 mx-5 text-center text-white text-4xl">
+            <AnimatePresence initial={true}>
+                    {mobileHero.split("").map((letter, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            style={{ display: "inline-block" }}
+          >
+            {letter === " " ? "\u00A0" : letter}
+          </motion.span>
+        ))} 
+                    </AnimatePresence>
+            </motion.h3>
           </div>
           <div className="absolute top-96 z-30 left-1/2 transform -translate-x-1/2 md:hidden">
             <a href="https://wa.me/8080332299/">
-              <button className="text-white border-2 rounded-xl pt-4 pb-4 pl-6 pr-6 hover:bg-white hover:text-black">
+              <motion.button 
+              initial={{ opacity: 0, y: 20 }}
+              animate = {{opacity: 1, y: 0}}
+              transition={{duration:0.7, delay: 2.5}}
+              className="text-white border-2 rounded-xl pt-4 pb-4 pl-6 pr-6 hover:bg-white hover:text-black">
                 Book Now
-              </button>
+              </motion.button>
             </a>
           </div>
           <div className="absolute inset-0 bg-black h-[100vh] opacity-40"></div>
