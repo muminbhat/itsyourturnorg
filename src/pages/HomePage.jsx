@@ -33,7 +33,7 @@ const imageList = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9
 
 const fadeInAnimationVariants = {
   initial: {
-    opacity: 0,
+    opacity: 1,
     y: 2,
   }, 
   animate: (index)=> ({
