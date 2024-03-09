@@ -47,6 +47,34 @@ const fadeInAnimationVariants = {
 }
 
 
+const AnimatedText = ({ text }) => {
+  const { ref, inView } = useInView();
+
+  return (
+    <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+      <AnimatePresence initial={true}>
+        {text.split("").map((letter, index) => (
+          inView && (
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              style={{ display: "inline-block" }}
+            >
+              {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+          )
+        ))}
+      </AnimatePresence>
+    </motion.h2>
+  );
+};
+
 const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -364,27 +392,7 @@ const HomePage = () => {
             {/* Title */}
             <div
             className="max-w-2xl text-center mx-auto mb-10 lg:mb-14">
-  <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-
-      <AnimatePresence initial={true}>
-        {servicesanim.split("").map((letter, index) => (
-          <motion.span
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            style={{ display: "inline-block" }}
-          >
-            {letter === " " ? "\u00A0" : letter}
-          </motion.span>
-        ))}
-      </AnimatePresence>
-
-    </motion.h2>
+           <AnimatedText text={servicesanim} />
             </div>
             {/* End Title */}
             {/* Grid */}
@@ -436,27 +444,7 @@ const HomePage = () => {
         >
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">              
-            <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-
-<AnimatePresence initial={true}>
-  {eventsanim.split("").map((letter, index) => (
-    <motion.span
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileInView="animate"
-      viewport={{
-        once: true,
-      }}
-      style={{ display: "inline-block" }}
-    >
-      {letter === " " ? "\u00A0" : letter}
-    </motion.span>
-  ))}
-</AnimatePresence>
-
-</motion.h2>
+          <AnimatedText text={eventsanim} />
             <div className="text-start">
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Welcome to{" "}
@@ -518,27 +506,7 @@ const HomePage = () => {
               <br />
               <br />
               <div className="text-center">
-              <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-
-<AnimatePresence initial={true}>
-  {giftinganim.split("").map((letter, index) => (
-    <motion.span
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileInView="animate"
-      viewport={{
-        once: true,
-      }}
-      style={{ display: "inline-block" }}
-    >
-      {letter === " " ? "\u00A0" : letter}
-    </motion.span>
-  ))}
-</AnimatePresence>
-
-</motion.h2>
+              <AnimatedText text={giftinganim} />
               </div>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Elevate your gifting experience with{" "}
@@ -565,27 +533,7 @@ const HomePage = () => {
         >
           {/* Title */}
           <div className="text-center mx-auto mb-10 lg:mb-14">
-          <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-
-<AnimatePresence initial={true}>
-  {gallaryanim.split("").map((letter, index) => (
-    <motion.span
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileInView="animate"
-      viewport={{
-        once: true,
-      }}
-      style={{ display: "inline-block" }}
-    >
-      {letter === " " ? "\u00A0" : letter}
-    </motion.span>
-  ))}
-</AnimatePresence>
-
-</motion.h2>
+          <AnimatedText text={gallaryanim} />
             <div
               class="elfsight-app-55b57f34-0050-4996-a52c-ca25d79553a1"
               data-elfsight-app-lazy
@@ -602,27 +550,7 @@ const HomePage = () => {
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Title */}
           <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-          <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-
-<AnimatePresence initial={true}>
-  {teamanim.split("").map((letter, index) => (
-    <motion.span
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileInView="animate"
-      viewport={{
-        once: true,
-      }}
-      style={{ display: "inline-block" }}
-    >
-      {letter === " " ? "\u00A0" : letter}
-    </motion.span>
-  ))}
-</AnimatePresence>
-
-</motion.h2>
+          <AnimatedText text={teamanim} />
           </div>
           {/* End Title */}
           {/* Grid */}
@@ -678,27 +606,7 @@ const HomePage = () => {
         <div className="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           {/* Blockquote */}
           <blockquote className="text-center lg:mx-auto lg:w-3/5">
-          <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
-
-<AnimatePresence initial={true}>
-  {testimonialsanim.split("").map((letter, index) => (
-    <motion.span
-      key={index}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileInView="animate"
-      viewport={{
-        once: true,
-      }}
-      style={{ display: "inline-block" }}
-    >
-      {letter === " " ? "\u00A0" : letter}
-    </motion.span>
-  ))}
-</AnimatePresence>
-
-</motion.h2>
+          <AnimatedText text={testimonialsanim} />
 
             <section className="bg-white">
               <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16 cursor-grab">
@@ -781,7 +689,7 @@ const HomePage = () => {
               {/* Title */}
               <div className="max-w-3xl text-center mx-auto">
                 <h3 className="block font-bold text-gray-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-                  IT’s Your Turn{" "}
+                <AnimatedText text={"Its Your Turn"} />
                 </h3>
               </div>
               {/* End Title */}
