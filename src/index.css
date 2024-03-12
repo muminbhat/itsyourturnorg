@@ -16,3 +16,22 @@ p {
 h4 {
     font-family: "allura";
 }
+
+.article-image {
+    filter: blur(20px);
+    animation: clearImage 4s ease forwards;
+  }
+  
+  .art {
+    filter: blur(10px);
+    animation: clearImage 2s ease forwards;
+  }
+  
+  @keyframes clearImage {
+    from {
+      filter: blur(20px);
+    }
+    to {
+      filter: blur(0);
+    }
+  }

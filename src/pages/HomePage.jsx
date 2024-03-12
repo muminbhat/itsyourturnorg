@@ -46,12 +46,11 @@ const fadeInAnimationVariants = {
   })
 }
 
-
 const AnimatedText = ({ text }) => {
   const { ref, inView } = useInView();
 
   return (
-    <motion.h2 ref={ref} className="text-4xl font-medium md:text-7xl md:leading-tight dark:text-white">
+    <motion.h2 ref={ref} className="text-md sm:text-3xl md:text-4xl art xl:text-6xl font-medium md:leading-tight dark:text-white break-keep">
       <AnimatePresence initial={true}>
         {text.split("").map((letter, index) => (
           inView && (
@@ -96,7 +95,7 @@ const HomePage = () => {
   // Text Writing Animation
   
   // Hero
-  const mobileHero = "SWEET MEMORIES OF MARRIAGE PLANNER"
+  const mobileHero = ["Extra-ordinary events delivered here....", " ", "Let us create magic for you!"];
 
   const heroTitleOne = "Extra-ordinary events delivered here...."
   const heroTitleTwo = "Let us create magic for you!"
@@ -173,10 +172,10 @@ const HomePage = () => {
                   srcSet={lgo}
                   className="max-w-full aspect-[1.08] fill-purple-900 w-[115px]"
                 />
-                <div className="mt-9 text-2xl  font-bold text-black whitespace-nowrap">
+                <div className="mt-9 text-2xl font-bold text-black whitespace-nowrap">
                   <h2>It’s Your Turn</h2>
                 </div>
-                <div className="mt-3 text-3xl text-purple-900 whitespace-nowrap">
+                <div className="mt-3 text-3xl article-image text-purple-900 whitespace-nowrap">
                   <h4 className="italic text-2xl">Social Event Specialists</h4>
                 </div>
                 <a href="/">
@@ -238,7 +237,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="flex-col w-10/12 max-md:ml-0 max-md:w-full hidden md:flex">
-              <div className="flex hero-container overflow-hidden relative flex-col justify-center items-start px-14 py-12 min-h-[734px] max-md:px-5 max-md:max-w-full">
+              <div className="flex hero-container overflow-hidden relative flex-col art justify-center items-start px-14 py-12 min-h-[734px] max-md:px-5 max-md:max-w-full">
                 {imageList.map((image, index) => (
                   <img
                     key={index}
@@ -270,7 +269,7 @@ const HomePage = () => {
                     </AnimatePresence>
                     </motion.h4>
 
-                    <motion.h4 ref={ref} className="italic text-5xl font-bold">
+                    <motion.h4 ref={ref} className="italic article-image text-5xl font-bold">
                     <AnimatePresence initial={true}>
                     {heroTitleTwo.split("").map((letter, index) => (
           <motion.span
@@ -295,7 +294,7 @@ const HomePage = () => {
                      initial={{ opacity: 0, y: 20 }}
                      animate = {{opacity: 1, y: 0}}
                      transition={{duration:0.7, delay: 2.5}}
-                    className="justify-center self-center px-10 py-2.5 mt-2.5 text-md font-medium text-white whitespace-nowrap bg-purple-600 shadow-sm max-md:px-5">
+                    className="justify-center self-center px-10 py-2.5 article-image mt-2.5 text-md font-medium text-white whitespace-nowrap bg-purple-600 shadow-sm max-md:px-5">
                       Book Now
                     </motion.div>
                   </a>
@@ -351,21 +350,26 @@ const HomePage = () => {
           </div>
           {/* Phone Version End */}
           <div>
-            <motion.h3 className="absolute z-10 top-40 mx-5 text-center text-white text-4xl">
-            <AnimatePresence initial={true}>
-                    {mobileHero.split("").map((letter, index) => (
+          <motion.h3 className="absolute z-10 top-40 mx-5 text-center text-white text-4xl">
+  <AnimatePresence initial={true}>
+    {mobileHero.map((line, lineIndex) => (
+      <React.Fragment key={lineIndex}>
+        {line.split("").map((letter, index) => (
           <motion.span
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.5, delay: lineIndex === 2 ? (index * 0.1) + 4 : index * 0.1 }} // Add delay for the second string
             style={{ display: "inline-block" }}
           >
             {letter === " " ? "\u00A0" : letter}
           </motion.span>
-        ))} 
-                    </AnimatePresence>
-            </motion.h3>
+        ))}
+        {lineIndex !== mobileHero.length - 1 && <br />} {/* Add <br /> except for the last line */}
+      </React.Fragment>
+    ))}
+  </AnimatePresence>
+</motion.h3>;
           </div>
           <div className="absolute top-96 z-30 left-1/2 transform -translate-x-1/2 md:hidden">
             <a href="https://wa.me/8080332299/">
