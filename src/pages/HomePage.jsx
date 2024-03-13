@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import phonecall from "../assets/phonecall.png";
+import Mhero6 from "../assets/Mhero6.JPG";
+import Mhero7 from "../assets/Mhero7.JPG";
+import Mhero8 from "../assets/Mhero8.JPG";
+import Mhero9 from "../assets/Mhero9.JPG";
 import hero1 from "../assets/hero1.png";
 import hero2 from "../assets/hero2.JPG";
 import hero3 from "../assets/hero3.JPG";
@@ -30,7 +34,8 @@ import servicesData from "../data/servicesData";
 
 
 const imageList = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9];
-
+const mobileImageList = [hero1, hero2, hero3, hero5, Mhero6 , Mhero7, Mhero8, Mhero9];
+// hero1, hero2, hero3, hero4, hero5, hero6, 
 const fadeInAnimationVariants = {
   initial: {
     opacity: 1,
@@ -333,7 +338,7 @@ const HomePage = () => {
           </button>
           {/* Phone Version Start*/}
           <div className="hero-container">
-            {imageList.map((image, index) => (
+            {mobileImageList.map((image, index) => (
               <img
                 key={index}
                 src={image}
