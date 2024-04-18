@@ -35,7 +35,8 @@ import servicesData from "../data/servicesData";
 
 const imageList = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8, hero9];
 const mobileImageList = [hero1, hero2, hero3, hero5, Mhero6 , Mhero7, Mhero8, Mhero9];
-// hero1, hero2, hero3, hero4, hero5, hero6, 
+
+// , 
 const fadeInAnimationVariants = {
   initial: {
     opacity: 1,

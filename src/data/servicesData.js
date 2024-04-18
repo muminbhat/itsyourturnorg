@@ -17,7 +17,7 @@ const servicesData = [
 
     {
         id: 2,
-        name: "MILESTON EVENTS",
+        name: "MILESTONE EVENTS",
         image: service2min
   
       },
