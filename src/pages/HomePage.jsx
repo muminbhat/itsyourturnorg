@@ -124,8 +124,8 @@ const HomePage = () => {
             <img src={lgo} alt="" className="w-20" />
           </div>
           <div className={`max-md:flex-col max-md:gap-0 md:flex`}>
-            <a href="https://wa.me/8080332299/">
-              <div className="md:hidden absolute top-4 right-5 z-20 ">
+            <a href="https://wa.me/+918080332299/">
+              <div className="md:hidden hidden absolute top-4 right-5 z-20 ">
                 <img src={phonecall} alt="" className="h-7 w-full" />
               </div>
             </a>
@@ -360,7 +360,7 @@ const HomePage = () => {
 </motion.h3>;
           </div>
           <div className="absolute top-[30rem] z-30 left-1/2 transform -translate-x-1/2 md:hidden">
-            <a href="https://wa.me/8080332299/">
+            <a href="https://wa.me/+918080332299/">
               <motion.button 
               initial={{ opacity: 0, y: 20 }}
               animate = {{opacity: 1, y: 0}}
@@ -805,7 +805,8 @@ const HomePage = () => {
               <p>
                 <a
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                  href="/"
+                  href="https://wa.me/+918080332299/"
+                  target="_blank"
                 >
                   +91 8080332299
                 </a>
