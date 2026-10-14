@@ -23,13 +23,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectCoverflow, EffectFlip } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFlip } from "swiper/modules";
 
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import testimonialSlider from "../data/testimonialSlider";
 
 // Framer
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import servicesData from "../data/servicesData";
 
 
@@ -84,7 +84,7 @@ const HomePage = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const { ref, inView } = useInView();
+  const { ref } = useInView();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -103,7 +103,6 @@ const HomePage = () => {
   // Hero
   const heroTitleOne = "Extra-ordinary events delivered here...."
   const heroTitleTwo = "Let us create magic for you!"
-  const heroTitleThree = "We are here to design your special days and create unforgettable memories"
 
   // Serivces
   const servicesanim = "Our Services";
@@ -174,6 +173,7 @@ const HomePage = () => {
                 <img
                   loading="lazy"
                   srcSet={lgo}
+                  alt="It's Your Turn logo"
                   className="max-w-full aspect-[1.08] fill-purple-900 w-[115px]"
                 />
                 <div className="mt-9 text-2xl font-bold text-black whitespace-nowrap">
@@ -407,7 +407,7 @@ const HomePage = () => {
                   <img
                     className="w-full object-cover  h-60"
                     src={service.image}
-                    alt="Image Description"
+                    alt={service.name}
                   />
                 </div>
                 <div className="p-4 md:p-5">
@@ -553,7 +553,7 @@ const HomePage = () => {
               <img
                 className="rounded-full sm:size-48 lg:size-60 mx-auto"
                 src="https://res.cloudinary.com/dxlzb8s4y/image/upload/v1708873074/teamOne_vwfpgl.png"
-                alt="Image Description"
+                alt="Muskaan Shah"
               />
               <div className="mt-2 sm:mt-4">
                 <h3 className="text-lg font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
@@ -572,7 +572,7 @@ const HomePage = () => {
               <img
                 className="rounded-full sm:size-48 lg:size-60 mx-auto"
                 src="https://res.cloudinary.com/dxlzb8s4y/image/upload/v1708873074/teamTwo_rpkffk.png"
-                alt="Image Description"
+                alt="Nihar Shah"
               />
               <div className="mt-2 sm:mt-4">
                 <h3 className="text-lg font-medium text-gray-800 sm:text-base lg:text-lg dark:text-gray-200">
@@ -807,6 +807,7 @@ const HomePage = () => {
                   className="inline-flex gap-x-2 text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   href="https://wa.me/+918080332299/"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   +91 8080332299
                 </a>
